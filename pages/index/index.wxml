@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="form-wrap" wx:if="{{verify == 0}}">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section">
+        <input name="name" placeholder="请输入真实姓名" bindinput="nameInput" />
+      </view>
+      <view class="section">
+        <input name="mobile" placeholder="请输入手机号码" bindinput="mobileInput" />
+      </view>
+      <view class="btn-area">
+        <button formType="submit">绑定</button>
+        <text class="bind-tip">请先绑定用户</text>
+      </view>
+    </form>
+  </view>
+  <block wx:elif="{{verify == 1}}">
+    <view class="bind-wrap">
+      <button bindtap="goToSalary">进入工资条</button>
+      <!-- <button class="unbind" bindtap="unbind">解绑账号</button> -->
+    </view>
+  </block>
+  <block wx:elif="{{verify == 2}}">
+    <view class="bind-wrap">
+      <text class="block-user">用户已经锁定</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="bind-wrap">
+      <text class="block-user">系统维护中</text>
+    </view>
+  </block>
+</view>
+ 

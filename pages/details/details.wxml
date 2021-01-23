@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="header">
+    <text>工资详情</text>
+</view>
+<view class="container container-salary">
+    <view class="card-wrap">
+        <view wx:for="{{salary}}">
+            <view class="item" wx:for="{{item}}">
+                <text class="item-left">{{index}}</text>
+                <text class="item-right">{{item}}</text>
+            </view>
+        </view>
+
+        <view class="btn-wrap">
+            <button bindtap="goBack">返回</button>
+        </view>
+    </view>
+</view>
+ 
