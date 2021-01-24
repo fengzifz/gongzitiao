@@ -9,8 +9,8 @@
 - 适合不希望使用第三方工具的初创团队、中小微企业。
 - 适合微信小程序新手当作 demo 学习。
 
-## 工资条后台 (稍后补充)
-
+## 工资条后台
+- Laravel 版本：[gongzitiao-admin](https://github.com/fengzifz/gongzitiao-admin)
 
 ## 页面
 
